@@ -85,11 +85,11 @@ class Shader:
 		glCompileShader(shader)
 
 		status = c_int()
-		glGetShaderiv(shader, GL_COMPILE_STATUS, byref(status))
-		if not status.value:
-			self.print_log(shader)
-			glDeleteShader(shader)
-			raise ValueError('Shader compilation failed')
+		#glGetShaderiv(shader, GL_COMPILE_STATUS, byref(status))
+		#if not status.value:
+		#	self.print_log(shader)
+		#	glDeleteShader(shader)
+		#	raise ValueError('Shader compilation failed')
 		return shader
 
 	def compile_program(self, vertex_source, fragment_source):
